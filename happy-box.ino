@@ -15,13 +15,11 @@
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 // Configuration Wi-Fi et Telegram
-const char* ssid = "TON_NOM_WIFI";
-const char* password = "TON_MOT_DE_PASSE";
-#define BOTtoken "TON_TOKEN_TELEGRAM_ICI"
+const char* ssid = "NOM_WIFI";
+const char* password = "MOT_DE_PASSE";
+#define BOTtoken "TOKEN_TELEGRAM_ICI"
 
-// URL brute (Raw) de votre fichier JSON sur GitHub
-// Pensez à remplacer par votre propre nom d'utilisateur et dépôt !
-const char* GITHUB_JSON_URL = "https://raw.githubusercontent.com/TON_USERNAME/TON_REPO/main/quotes.json";
+const char* GITHUB_JSON_URL = "https://raw.githubusercontent.com/jasongauvin/happy-box/main/quotes.json";
 
 WiFiClientSecure client;
 UniversalTelegramBot bot(BOTtoken, client);
@@ -30,7 +28,7 @@ int tempsAttenteBot = 2000;
 unsigned long derniereFoisBotTourne = 0;
 unsigned long dernierCheckMinuit = 0;
 
-// Mémoire interne pour sauvegarder le message et son heure
+// Mémoire interne pour sauvegarder le message + heure
 Preferences memoire;
 String dernierMessageRecu = "";
 String heureReception = "";
